@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Device Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing">
+    <h1>Multi-Device Music Player</h1>
+    <button onclick="generateHostRoom()">Host</button>
+    <button onclick="showJoinInput()">Connect</button>
+    <div id="join-section" style="display: none;">
+      <input type="text" id="room-code-input" placeholder="Enter Room Code" />
+      <button onclick="connectToRoom()">Join</button>
+    </div>
+  </div>
+
+  <!-- Host Room Display -->
+  <div id="host-room" style="display: none;">
+    <h2>Your Room Code</h2>
+    <p id="generated-room-code" style="font-size: 24px; font-weight: bold;"></p>
+    <button onclick="startAsHost()">Enter Room</button>
+  </div>
+
+  <!-- Music Player Page -->
+  <div id="player" style="display: none;">
+    <h2 id="song-title">Title</h2>
+    <p id="artist-name">Artist</p>
+    <audio id="audio"></audio>
+    <input type="range" id="progress" value="0" />
+    <div class="controls">
+      <button onclick="previousSong()">⏮️</button>
+      <button onclick="togglePlayPause()" id="playPauseBtn">▶️</button>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+    <p>Room Code: <span id="display-room-code"></span></p>
+  </div>
+
+  <!-- Single Unified JS Module -->
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
